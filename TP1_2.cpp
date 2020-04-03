@@ -4,6 +4,7 @@
 int Cuadrado(int Num);
 void Cuadrado2(int a, int * cuad);
 void Invertir(int * a, int * b);
+void Ordenar(int *a, int *b);
 
 int main(){
     int a;
@@ -21,18 +22,20 @@ int main(){
     printf("\nEl valor de la variable es:%d",a);
     printf("\nLa direccion de la variable es: %p", &a);
 
-    printf("\n\nIngrese el primer numero");
+    printf("\n\nIngrese el primer numero: ");
     scanf("%d",&prim);
-    printf("\nInegrese el sedundo numero");
+    printf("\nInegrese el sedundo numero: ");
     scanf("%d",&seg);
 
     Invertir(&prim,&seg);
+    
     getchar();
 
     printf("\n1: %d",prim);
     printf("\n2: %d",seg);
 
-
+    Ordenar(&prim,&seg);
+     
     getchar();
 
     return 0;
@@ -59,6 +62,27 @@ void Invertir(int *a, int *b){
     c= *b;
     *b= *a;
     *a= c;
+
+    return;
+}
+
+void Ordenar(int *a, int *b){
+
+    if (*a<*b)
+    {
+        printf("\n\n%d - %d", *a,*b);
+    }else
+    {
+        if (*b < *a)
+        {
+            printf("\n\n%d - %d", *b,*a);
+        }else
+        {
+            printf("\n\nSon Iguales");
+        }       
+    }
+    
+    
 
     return;
 }
